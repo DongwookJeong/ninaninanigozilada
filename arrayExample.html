@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What is array?</title>
+  <style>
+    #title {
+      background-color: yellow;
+      color: red;
+    }
+
+    #title:hover {
+      color: gray;
+      background-color: blue;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="title">ni</div>
+  <script>
+    const title = document.getElementById("title");
+    const arrayData = ["츠케멘", "규동", "온센타마고", "스키야키", "가라아게", "먹고싶다."];
+
+    let count = 0;
+    let timer = setInterval(() => {
+      if (count < arrayData.length) {
+        title.innerHTML = arrayData[count];
+        count++
+      } else {
+        count = 0;
+      }
+    }, 1000);
+    title.addEventListener("click", () => {
+      clearInterval(timer);
+      title.innerHTML = "end";
+    });
+  </script>
+</body>
+
+</html>
